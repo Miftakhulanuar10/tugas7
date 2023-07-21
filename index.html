@@ -17,10 +17,10 @@
                 <a href="#" onclick="showMenu()">menu</a>
             </div>
             <ul id="menu">
-                <li><a href="index.html">HOME</a></li>
+                <li><a href="/">HOME</a></li>
                 <li><a href="#">PRODUCT</a></li>
                 <li><a href="#">GALLERY</a></li>
-                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="#">BLOG</a></li>
                 <li><a href="#">INVENTORY</a></li>
             </ul>
         </nav>
@@ -92,37 +92,37 @@
         </section>
 
         <section id="input-form">
-            <form method="#" action="#" name="datapribadi">
+            <form>
                 <div class="form">
                     <label>Nama</label>
                     <input id="inpName" type="text" name="nama" placeholder="masukkan nama anda">
                 </div>   
                 <div class="form">
                     <label>Role</label>
-                    <input id="inpRole" type="text" name="role">
+                    <input id="inpRole" type="text">
                 </div>  
                 <div class="form">
                     <label>Availability</label>
-                    <input id="inpAvailability" type="text" name="Availability">
+                    <input id="inpAvailability" type="text">
                 </div>  
                 <div class="form">
                     <label>Usia</label>
-                    <input id="inpUsia" type="number" name="usia">
+                    <input id="inpUsia" type="number">
                 </div>  
                 <div class="form">
                     <label>Lokasi</label>
-                    <input id="inpLokasi" type="text" name="lokasi">
+                    <input id="inpLokasi" type="text">
                 </div>  
                 <div class="form">
                     <label>Years Experience</label>
-                    <input id="inpYears" type="number" name="experience">
+                    <input id="inpYears" type="number">
                 </div>  
                 <div class="form">
                     <label>Email</label>
-                    <input id="inpEmail" type="email" name="email">
+                    <input id="inpEmail" type="email">
                 </div>            
                 <div class="form">
-                    <input onclick="simpanForm()" type="submit" name="submit" value="SUBMIT" class="bg-green">
+                    <a href="#input-form" class="button bg-green" style="text-align: center;" onclick="simpanForm()">SUBMIT</a>
                 </div>
             </form>            
         </section>
@@ -148,7 +148,7 @@
             QUIZ = lakukan untuk file selanjutnya. 
             save-debug.
         -->
- 
+
 
         <script>
             var formMenu = document.getElementById("input-form");
@@ -180,29 +180,23 @@
             }
             
             function simpanForm(){
-                if(formMenu.style.display === "none"){
-                    formMenu.style.display = "block";
-                }else{
-                    formMenu.style.display = "none";
-                }
 
-                var name =document.forms['datapribadi']['nama'].value;
-                var role=document.forms['datapribadi']['role'].value;
-                var available=document.forms['datapribadi']['Availability'].value;
-                var usia=document.forms['datapribadi']['usia'].value;  
-                var lokasi=document.forms['datapribadi']['lokasi'].value;  
-                var experience=document.forms['datapribadi']['experience'].value;  
-                var email=document.forms['datapribadi']['email'].value; 
-
-                document.getElementById("inpName").value=name;
-                document.getElementById("inpRole").value=role;
-                document.getElementById("inpAvailability").value=available;
-                document.getElementById("inpUsia").value=usia;
-                document.getElementById("inpLokasi").value=lokasi;
-                document.getElementById("inpYears").value=experience;
-                document.getElementById("inpEmail").value=email;
-                
-
+               var name = document.getElementById("inpName").value;
+               var role = document.getElementById("inpRole").value;
+               var available = document.getElementById("inpAvailability").value;
+               var usia = document.getElementById("inpUsia").value;
+               var lokasi = document.getElementById("inpLokasi").value;
+               var experience = document.getElementById("inpYears").value;
+               var email = document.getElementById("inpEmail").value;
+               
+                document.getElementById("pName").innerHTML = name;
+                document.getElementById("pRole").innerHTML = role;
+                document.getElementById("pAvailable").innerHTML = available;
+                document.getElementById("pAge").innerHTML = usia;
+                document.getElementById("pLocation").innerHTML = lokasi;
+                document.getElementById("pExperience").innerHTML = experience;
+                document.getElementById("pEmail").innerHTML = email;
+                formMenu.style.display="none";
             }
 
             function showMenu()
